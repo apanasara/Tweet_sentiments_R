@@ -86,6 +86,7 @@ campaign_tweets %>%
        y = "% of tweets",
        color = "")
 ```
+![Tweets during days timings](assets/Tweets_DayHr.png)
 
 We notice a big peak for the Android in early hours of the morning, between 6 and 8 AM. There seems to be a clear different in these patterns. We will therefore assume that two different entities are using these two devices. Now we will study how their tweets differ. To do this we introduce the tidytext package.
 
@@ -297,6 +298,7 @@ log_or %>%
   ylab("Log odds ratio for association between Android and sentiment") +
   coord_flip() 
 ```
+![Sentiment Category Distribution](assets/Sentiments_boxplot.png)
 We see that the disgust, anger, negative sadness and fear sentiments are associated with the Android in a way that is hard to explain by chance alone. Words not associated to a sentiment were strongly associated with the iPhone source, which is in agreement with the original claim about hyperbolic tweets.
 
 If we are interested in exploring which specific words are driving these differences, we can back to our android_iphone_or object:
@@ -318,4 +320,4 @@ android_iphone_or %>% inner_join(nrc, by = "word") %>%
   geom_bar(stat="identity", show.legend = FALSE) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) 
 ```
-
+![Terms used for expressing sentiments](assets/Sentiment_terms.png)
