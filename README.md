@@ -299,6 +299,7 @@ log_or %>%
   coord_flip() 
 ```
 ![Sentiment Category Distribution](assets/Sentiments_boxplot.png)
+
 We see that the disgust, anger, negative sadness and fear sentiments are associated with the Android in a way that is hard to explain by chance alone. Words not associated to a sentiment were strongly associated with the iPhone source, which is in agreement with the original claim about hyperbolic tweets.
 
 If we are interested in exploring which specific words are driving these differences, we can back to our android_iphone_or object:
